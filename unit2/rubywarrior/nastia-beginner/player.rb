@@ -15,6 +15,21 @@ class Player
       warrior.pivot! :backward
       @saved = true
 
+    elsif warrior.feel(:backward).wall?
+      @saved = true
+      warrior.walk!
+
+    #WIZARDS
+    elsif (warrior.look.any? { |space| space.captive? }) 
+      if warrior.feel.captive?
+        warrior.rescue!
+      else
+        warrior.walk!
+      end
+      
+    elsif (warrior.look.any? { |space| space.enemy? })
+      warrior.shoot!
+
     #BACKWARD:
     elsif warrior.feel(:backward).empty? && @saved == false
       warrior.walk! :backward
