@@ -4,12 +4,14 @@ class Player
   MINIMUM = 8
   MAXIMUM = 20
   @saved = nil
+  @turned = nil
 
 
   def play_turn(warrior)
 
     @health = warrior.health unless @health != nil
     @saved = false unless @saved != nil
+    @turned = false unless @turned != nil
 
     if warrior.feel.wall?
       warrior.pivot! :backward
@@ -19,14 +21,27 @@ class Player
       @saved = true
       warrior.walk!
 
-    #WIZARDS
+    elsif warrior.look(:backward).any? { |space| space.enemy? } && @turned == false
+      warrior.pivot! :backward
+      @turned = true
+
+    elsif warrior.look.all? { |space| space.empty? }
+      if @turned == true
+        warrior.walk!
+      end 
+      #warrior.pivot! :backward
+
+    #CAPTIVES AHEAD
     elsif (warrior.look.any? { |space| space.captive? }) 
+
       if warrior.feel.captive?
         warrior.rescue!
+        @saved = true
       else
         warrior.walk!
       end
       
+    #WIZARDS  
     elsif (warrior.look.any? { |space| space.enemy? })
       warrior.shoot!
 
