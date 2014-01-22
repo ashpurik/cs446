@@ -5,78 +5,62 @@ class Player
   MAXIMUM = 20
   @saved = nil
   @turned = nil
+  @warrior = nil
 
 
   def play_turn(warrior)
 
-    @health = warrior.health unless @health != nil
-    @saved = false unless @saved != nil
     @turned = false unless @turned != nil
+    @warrior = warrior unless @warrior != nil
 
-    if warrior.feel.wall?
-      warrior.pivot! :backward
-      @saved = true
-
-    elsif warrior.feel(:backward).wall?
-      @saved = true
-      warrior.walk!
-
-    elsif warrior.look(:backward).any? { |space| space.enemy? } && @turned == false
+    if (enemy_behind? || captive_behind?) && @turned == false
       warrior.pivot! :backward
       @turned = true
 
-    elsif warrior.look.all? { |space| space.empty? }
-      if @turned == true
-        warrior.walk!
-      end 
-      #warrior.pivot! :backward
+    elsif wall_in_front?
+      warrior.pivot! :backward
 
-    #CAPTIVES AHEAD
-    elsif (warrior.look.any? { |space| space.captive? }) 
+    elsif found_captive?
+      warrior.rescue!
 
-      if warrior.feel.captive?
-        warrior.rescue!
-        @saved = true
-      else
-        warrior.walk!
-      end
-      
-    #WIZARDS  
-    elsif (warrior.look.any? { |space| space.enemy? })
+    elsif enemy_ahead?
       warrior.shoot!
 
-    #BACKWARD:
-    elsif warrior.feel(:backward).empty? && @saved == false
-      warrior.walk! :backward
-
-    elsif warrior.feel(:backward).captive?
-      warrior.rescue! :backward
-      @saved = true
-        
-    #FORWARD
-    elsif warrior.feel.empty?
-
-      if warrior.health < @health && warrior.health <= MINIMUM
-        warrior.walk! :backward
-      elsif warrior.health < @health && warrior.health > MINIMUM
-        warrior.walk!
-      elsif warrior.health >= @health && warrior.health < MAXIMUM
-        warrior.rest!
-      else
-        warrior.walk!
-      end
-
     else
-
-      if warrior.feel.captive?
-        warrior.rescue!
-      else
-        warrior.attack!
-      end
-
+      warrior.walk!
+      
     end
-
-    @health = warrior.health
-
+    
   end
+  
+
+  def enemy_behind?
+    return @warrior.look(:backward).any? { |space| space.enemy? }
+  end
+
+  def captive_behind?
+    return @warrior.look(:backward).any? { |space| space.captive? }
+  end
+
+  def wall_in_front?
+    return @warrior.feel.wall?
+  end
+
+  def enemy_ahead?
+    return @warrior.look.any? { |space| space.enemy? }
+  end
+
+  def captive_ahead?
+    return @warrior.look.any? { |space| space.captive? }
+  end
+
+  def found_captive?
+    return @warrior.feel.captive?
+  end
+
+  def under_attack?
+    return @warrior.health < @health
+  end
+
 end
+
