@@ -1,0 +1,381 @@
+
+
+Started GET "/" for 127.0.0.1 at 2014-01-28 17:08:23 -0700
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /home/nastia/.gem/ruby/2.0.0/gems/railties-4.0.2/lib/rails/templates/rails/welcome/index.html.erb (1.9ms)
+Completed 200 OK in 62ms (Views: 41.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/say/hello" for 127.0.0.1 at 2014-01-28 17:15:18 -0700
+Processing by SayController#hello as HTML
+  Rendered say/hello.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 611ms (Views: 589.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/say.css?body=1" for 127.0.0.1 at 2014-01-28 17:15:19 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-01-28 17:15:19 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-01-28 17:15:19 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-01-28 17:15:19 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-01-28 17:15:19 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-01-28 17:15:19 -0700
+
+
+Started GET "/assets/say.js?body=1" for 127.0.0.1 at 2014-01-28 17:15:19 -0700
+
+
+Started GET "/say/hello" for 127.0.0.1 at 2014-01-28 17:17:02 -0700
+Processing by SayController#hello as HTML
+  Rendered say/hello.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 83ms (Views: 61.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/say.css?body=1" for 127.0.0.1 at 2014-01-28 17:17:02 -0700
+
+
+Started GET "/assets/say.js?body=1" for 127.0.0.1 at 2014-01-28 17:17:02 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-01-28 17:17:02 -0700
+
+
+Started GET "/say/hello" for 127.0.0.1 at 2014-01-28 17:18:12 -0700
+Processing by SayController#hello as HTML
+  Rendered say/hello.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 6ms (Views: 5.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-01-28 17:18:12 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-01-28 17:18:12 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-01-28 17:18:12 -0700
+
+
+Started GET "/assets/say.js?body=1" for 127.0.0.1 at 2014-01-28 17:18:12 -0700
+
+
+Started GET "/assets/say.css?body=1" for 127.0.0.1 at 2014-01-28 17:18:12 -0700
+
+
+Started GET "/say/hello" for 127.0.0.1 at 2014-01-28 17:18:18 -0700
+Processing by SayController#hello as HTML
+  Rendered say/hello.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 6ms (Views: 5.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/say.css?body=1" for 127.0.0.1 at 2014-01-28 17:18:18 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-01-28 17:18:18 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-01-28 17:18:18 -0700
+
+
+Started GET "/assets/say.js?body=1" for 127.0.0.1 at 2014-01-28 17:18:18 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-01-28 17:18:18 -0700
+
+
+Started GET "/say/hello" for 127.0.0.1 at 2014-01-28 17:18:19 -0700
+Processing by SayController#hello as HTML
+  Rendered say/hello.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 5ms (Views: 4.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/say.css?body=1" for 127.0.0.1 at 2014-01-28 17:18:19 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-01-28 17:18:19 -0700
+
+
+Started GET "/assets/say.js?body=1" for 127.0.0.1 at 2014-01-28 17:18:19 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-01-28 17:18:19 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-01-28 17:18:19 -0700
+
+
+Started GET "/say/hello" for 127.0.0.1 at 2014-01-28 17:18:20 -0700
+Processing by SayController#hello as HTML
+  Rendered say/hello.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 5ms (Views: 4.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/say.css?body=1" for 127.0.0.1 at 2014-01-28 17:18:20 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-01-28 17:18:20 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-01-28 17:18:20 -0700
+
+
+Started GET "/assets/say.js?body=1" for 127.0.0.1 at 2014-01-28 17:18:20 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-01-28 17:18:20 -0700
+
+
+Started GET "/say/hello" for 127.0.0.1 at 2014-01-28 17:18:20 -0700
+Processing by SayController#hello as HTML
+  Rendered say/hello.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 5ms (Views: 4.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/say.css?body=1" for 127.0.0.1 at 2014-01-28 17:18:20 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-01-28 17:18:20 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-01-28 17:18:20 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-01-28 17:18:20 -0700
+
+
+Started GET "/assets/say.js?body=1" for 127.0.0.1 at 2014-01-28 17:18:20 -0700
+
+
+Started GET "/say/hello" for 127.0.0.1 at 2014-01-28 17:18:22 -0700
+Processing by SayController#hello as HTML
+  Rendered say/hello.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 6ms (Views: 5.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/say.css?body=1" for 127.0.0.1 at 2014-01-28 17:18:22 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-01-28 17:18:22 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-01-28 17:18:22 -0700
+
+
+Started GET "/assets/say.js?body=1" for 127.0.0.1 at 2014-01-28 17:18:22 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-01-28 17:18:22 -0700
+
+
+Started GET "/say/hello" for 127.0.0.1 at 2014-01-28 17:23:56 -0700
+Processing by SayController#hello as HTML
+  Rendered say/hello.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 6ms (Views: 5.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-01-28 17:23:56 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-01-28 17:23:56 -0700
+
+
+Started GET "/assets/say.js?body=1" for 127.0.0.1 at 2014-01-28 17:23:56 -0700
+
+
+Started GET "/assets/say.css?body=1" for 127.0.0.1 at 2014-01-28 17:23:56 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-01-28 17:23:56 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-01-28 17:23:56 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-01-28 17:23:56 -0700
+
+
+Started GET "/say/hello" for 127.0.0.1 at 2014-01-28 17:23:57 -0700
+Processing by SayController#hello as HTML
+  Rendered say/hello.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 6ms (Views: 4.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-01-28 17:23:57 -0700
+
+
+Started GET "/assets/say.css?body=1" for 127.0.0.1 at 2014-01-28 17:23:57 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-01-28 17:23:57 -0700
+
+
+Started GET "/assets/say.js?body=1" for 127.0.0.1 at 2014-01-28 17:23:57 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-01-28 17:23:57 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-01-28 17:23:57 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-01-28 17:23:57 -0700
+
+
+Started GET "/say/hello" for 127.0.0.1 at 2014-01-28 17:23:58 -0700
+Processing by SayController#hello as HTML
+  Rendered say/hello.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 6ms (Views: 5.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-01-28 17:23:58 -0700
+
+
+Started GET "/assets/say.css?body=1" for 127.0.0.1 at 2014-01-28 17:23:58 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-01-28 17:23:58 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-01-28 17:23:58 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-01-28 17:23:58 -0700
+
+
+Started GET "/assets/say.js?body=1" for 127.0.0.1 at 2014-01-28 17:23:58 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-01-28 17:23:58 -0700
+
+
+Started GET "/say/hello" for 127.0.0.1 at 2014-01-28 17:33:04 -0700
+Processing by SayController#hello as HTML
+  Rendered say/hello.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 5ms (Views: 4.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-01-28 17:33:04 -0700
+
+
+Started GET "/assets/say.css?body=1" for 127.0.0.1 at 2014-01-28 17:33:04 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-01-28 17:33:04 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-01-28 17:33:04 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-01-28 17:33:04 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-01-28 17:33:04 -0700
+
+
+Started GET "/assets/say.js?body=1" for 127.0.0.1 at 2014-01-28 17:33:04 -0700
+
+
+Started GET "/say/goodbye" for 127.0.0.1 at 2014-01-28 17:33:07 -0700
+Processing by SayController#goodbye as HTML
+  Rendered say/goodbye.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 7ms (Views: 6.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-01-28 17:33:07 -0700
+
+
+Started GET "/assets/say.css?body=1" for 127.0.0.1 at 2014-01-28 17:33:07 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-01-28 17:33:07 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-01-28 17:33:07 -0700
+
+
+Started GET "/assets/say.js?body=1" for 127.0.0.1 at 2014-01-28 17:33:07 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-01-28 17:33:07 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-01-28 17:33:07 -0700
+
+
+Started GET "/say/hello" for 127.0.0.1 at 2014-01-28 17:34:28 -0700
+Processing by SayController#hello as HTML
+  Rendered say/hello.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 7ms (Views: 6.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-01-28 17:34:28 -0700
+
+
+Started GET "/assets/say.css?body=1" for 127.0.0.1 at 2014-01-28 17:34:28 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-01-28 17:34:28 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-01-28 17:34:28 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-01-28 17:34:28 -0700
+
+
+Started GET "/assets/say.js?body=1" for 127.0.0.1 at 2014-01-28 17:34:28 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-01-28 17:34:28 -0700
+
+
+Started GET "/say/goodbye" for 127.0.0.1 at 2014-01-28 17:34:30 -0700
+Processing by SayController#goodbye as HTML
+  Rendered say/goodbye.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 7ms (Views: 5.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/say/hello" for 127.0.0.1 at 2014-01-28 17:35:45 -0700
+Processing by SayController#hello as HTML
+  Rendered say/hello.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 6ms (Views: 5.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-01-28 17:35:45 -0700
+
+
+Started GET "/assets/say.css?body=1" for 127.0.0.1 at 2014-01-28 17:35:45 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-01-28 17:35:45 -0700
+
+
+Started GET "/assets/say.js?body=1" for 127.0.0.1 at 2014-01-28 17:35:45 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-01-28 17:35:45 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-01-28 17:35:45 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-01-28 17:35:45 -0700
+
+
+Started GET "/say/goodbye" for 127.0.0.1 at 2014-01-28 17:35:46 -0700
+Processing by SayController#goodbye as HTML
+  Rendered say/goodbye.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 7ms (Views: 6.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/say/hello" for 127.0.0.1 at 2014-01-28 17:35:47 -0700
+Processing by SayController#hello as HTML
+  Rendered say/hello.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 7ms (Views: 6.6ms | ActiveRecord: 0.0ms)
