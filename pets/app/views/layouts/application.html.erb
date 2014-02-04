@@ -1,14 +1,29 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Pets</title>
-  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
-  <%= csrf_meta_tags %>
+  <title>Pet Adoption Center</title>
+  <%= stylesheet_link_tag "scaffold" %>
+  <%= stylesheet_link_tag "pets", :media => "all" %>
+  <%= javascript_include_tag :defaults %>
+  <%= csrf_meta_tag %>
 </head>
-<body>
 
-<%= yield %>
+<body id="pets">
+  <div id="banner">
+    <%= "Pet Adoption Center" %>
+  </div>
+
+  <div id="columns">
+    <div id="side">
+      <a href="http://www.google.com">Google</a><br/>
+      <a href="http://blackboard.mines.edu">Blackboard</a></br/>
+      <a href="http://eecs.mines.edu">EECS</a>
+    </div>
+
+    <div id="main">
+      <%= yield %>
+    </div>
+  </div>
 
 </body>
 </html>

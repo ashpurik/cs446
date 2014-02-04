@@ -1,35 +1,39 @@
+<div id="pet_list">
+
 <h1>Listing pets</h1>
 
 <table>
   <thead>
     <tr>
+      <th></th>
       <th>Name</th>
       <th>Breed</th>
-      <th>Image url</th>
-      <th>Age</th>
+      <th>Age (years)</th>
       <th>Habits</th>
-      <th></th>
-      <th></th>
-      <th></th>
     </tr>
   </thead>
 
   <tbody>
     <% @pets.each do |pet| %>
-      <tr>
+      <tr class = "<%= cycle('list_line_odd', 'list_line_even') %>">
+	
+	<td><%= image_tag(pet.image_url, :class => 'list_image', :height => '200px', :width => '150px') %></td>
         <td><%= pet.name %></td>
         <td><%= pet.breed %></td>
-        <td><%= pet.image_url %></td>
         <td><%= pet.age %></td>
         <td><%= pet.habits %></td>
-        <td><%= link_to 'Show', pet %></td>
-        <td><%= link_to 'Edit', edit_pet_path(pet) %></td>
-        <td><%= link_to 'Destroy', pet, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+	
+	<td class="list_actions">
+          <%= link_to 'Show', pet %><br/>
+          <%= link_to 'Edit', edit_pet_path(pet) %><br/>
+          <%= link_to 'Destroy', pet, method: :delete, data: { confirm: 'Are you sure?' } %>
+        </td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
+</div>
 <br>
 
 <%= link_to 'New Pet', new_pet_path %>
