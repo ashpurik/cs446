@@ -1,6 +1,8 @@
 require 'test_helper'
 
 class PetTest < ActiveSupport::TestCase
+  fixtures :pets
+
   test "pet attributes should not be empty" do
     pet = Pet.new
     assert pet.invalid?
@@ -52,5 +54,9 @@ class PetTest < ActiveSupport::TestCase
     bad.each do |url|
       assert new_pet(url).invalid?, "#{url} shouldn't be valid"
     end
+  end
+
+  test "find" do
+    assert_equal "Ruby", pets(:ruby).name
   end
 end

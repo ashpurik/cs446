@@ -1,0 +1,17 @@
+<% if notice %>
+<p id="notice"><%= notice %></p>
+<% end %>
+
+<h1>Furries Looking for Homes</h1>
+
+<% @pets.each do |pet| %>
+  <div class="entry">
+    <%= image_tag(pet.image_url, :height => '250px') %>
+    <h3><%= pet.name %></h3>
+    <%= sanitize(pet.habits) %>
+    <%= pet.age %>
+    <div class="breed_line">
+      <span class="breed"><%= pet.breed %></span>
+    </div>
+  </div>
+<% end %>
