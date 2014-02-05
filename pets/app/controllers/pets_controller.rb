@@ -1,11 +1,13 @@
 class PetsController < ApplicationController
+  helper_method :sort_column, :sort_direction
   before_action :set_pet, only: [:show, :edit, :update, :destroy]
 
   # GET /pets
   # GET /pets.json
   def index
-    @pets = Pet.all
+    @pets = Pet.order(sort_column + " " + sort_direction)
   end
+  
 
   # GET /pets/1
   # GET /pets/1.json
@@ -70,5 +72,13 @@ class PetsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def pet_params
       params.require(:pet).permit(:name, :breed, :image_url, :age, :habits)
+    end
+  
+    def sort_column
+      Pet.column_names.include?(params[:sort]) ? params[:sort] : "breed"
+    end
+  
+    def sort_direction
+      %w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"
     end
 end

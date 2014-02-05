@@ -1,14 +1,15 @@
 <div id="pet_list">
 
-<h1>Listing pets</h1>
+<h1>Pet Listing</h1>
+<h3>You can sort by breed or age!</h3>
 
-<table>
+<table class="pretty">
   <thead>
     <tr>
       <th></th>
       <th>Name</th>
-      <th>Breed</th>
-      <th>Age (years)</th>
+      <th><%= sortable "breed" %></th>
+      <th><%= sortable "age" %></th>
       <th>Habits</th>
     </tr>
   </thead>
