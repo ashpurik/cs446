@@ -26,17 +26,17 @@ class CartsControllerTest < ActionController::TestCase
 
   test "should show cart" do
     get :show, id: @cart
-    assert_response :success
+    assert_response 302
   end
 
   test "should get edit" do
     get :edit, id: @cart
-    assert_response :success
+    assert_response 302
   end
 
   test "should update cart" do
     patch :update, id: @cart, cart: {  }
-    assert_redirected_to cart_path(assigns(:cart))
+    assert_redirected_to store_url
   end
 
   test "should destroy cart" do

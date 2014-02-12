@@ -1,5 +1,5 @@
 class CartsController < ApplicationController
-  before_action :set_cart, only: [:show, :edit, :update, :destroy]
+  before_action :destroy, :set_cart, only: [:show, :edit, :update]
 
   # GET /carts
   # GET /carts.json
@@ -70,7 +70,8 @@ class CartsController < ApplicationController
     session[:cart_id] = nil
 
     respond_to do |format|
-      format.html { redirect_to store_url, notice: 'Your cart is currently empty' }
+      format.html { redirect_to store_url }
+      format.js
       format.json { head :no_content }
     end
   end
