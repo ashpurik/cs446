@@ -1,0 +1,10 @@
+<% if notice %>
+<p id="notice"><%= notice %></p>
+<% end %>
+
+<h2>Pets You're Considering</h2>
+<ul>    
+  <% @consider.line_pets.each do |animal| %>
+    <li><%= animal.pet.name %></li>
+  <% end %>
+</ul>

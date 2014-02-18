@@ -1,0 +1,29 @@
+<h1>Listing line_pets</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Pet</th>
+      <th>Consider</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @line_pets.each do |line_pet| %>
+      <tr>
+        <td><%= line_pet.pet %></td>
+        <td><%= line_pet.consider %></td>
+        <td><%= link_to 'Show', line_pet %></td>
+        <td><%= link_to 'Edit', edit_line_pet_path(line_pet) %></td>
+        <td><%= link_to 'Destroy', line_pet, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Line pet', new_line_pet_path %>

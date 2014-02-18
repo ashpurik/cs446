@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Pet:</strong>
+  <%= @line_pet.pet %>
+</p>
+
+<p>
+  <strong>Consider:</strong>
+  <%= @line_pet.consider %>
+</p>
+
+<%= link_to 'Edit', edit_line_pet_path(@line_pet) %> |
+<%= link_to 'Back', line_pets_path %>

@@ -1484,3 +1484,117 @@ Processing by PetsController#update as HTML
 Redirected to http://test.host/pets/980190962
 Completed 302 Found in 6ms (ActiveRecord: 0.7ms)
   [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (50.6ms)[0m  [1mCREATE TABLE "considers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (165.0ms)[0m  CREATE TABLE "line_pets" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "pet_id" integer, "consider_id" integer, "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (63.2ms)[0m  [1mCREATE INDEX "index_line_pets_on_consider_id" ON "line_pets" ("consider_id")[0m
+  [1m[35m (63.6ms)[0m  CREATE INDEX "index_line_pets_on_pet_id" ON "line_pets" ("pet_id")
+  [1m[36m (59.4ms)[0m  [1mCREATE TABLE "pets" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "breed" varchar(255), "image_url" varchar(255), "age" decimal, "habits" text, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (52.8ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+  [1m[36m (144.2ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.1ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (45.9ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20140218042837')[0m
+  [1m[35m (52.4ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20140218042425')
+  [1m[36m (58.1ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20140203045224')[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "pets"[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO "pets" ("name", "breed", "image_url", "age", "habits", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', 9.99, 'MyText', '2014-02-18 04:44:25', '2014-02-18 04:44:25', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "pets" ("name", "breed", "image_url", "age", "habits", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', 9.99, 'MyText', '2014-02-18 04:44:25', '2014-02-18 04:44:25', 298486374)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "pets" ("name", "breed", "image_url", "age", "habits", "created_at", "updated_at", "id") VALUES ('Ruby', 'Kitty', 'ruby_kitty.gif', 8.0, 'Cat Stuff', '2014-02-18 04:44:25', '2014-02-18 04:44:25', 207281424)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "line_pets"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "line_pets" ("pet_id", "consider_id", "created_at", "updated_at", "id") VALUES (NULL, NULL, '2014-02-18 04:44:25', '2014-02-18 04:44:25', 980190962)
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "line_pets" ("pet_id", "consider_id", "created_at", "updated_at", "id") VALUES (NULL, NULL, '2014-02-18 04:44:25', '2014-02-18 04:44:25', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "considers"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "considers" ("created_at", "updated_at", "id") VALUES ('2014-02-18 04:44:25', '2014-02-18 04:44:25', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "considers" ("created_at", "updated_at", "id") VALUES ('2014-02-18 04:44:25', '2014-02-18 04:44:25', 298486374)
+  [1m[36m (53.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+---------------------------------------------------
+LinePetsControllerTest: test_should_create_line_pet
+---------------------------------------------------
+  [1m[36mLinePet Load (0.3ms)[0m  [1mSELECT "line_pets".* FROM "line_pets" WHERE "line_pets"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "line_pets"
+  [1m[36mPet Load (0.1ms)[0m  [1mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT 1[0m  [["id", 207281424]]
+Processing by LinePetsController#create as HTML
+  Parameters: {"pet_id"=>"207281424"}
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (1.9ms)[0m  [1mINSERT INTO "considers" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", Tue, 18 Feb 2014 04:44:25 UTC +00:00], ["updated_at", Tue, 18 Feb 2014 04:44:25 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mPet Load (0.1ms)[0m  [1mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT 1[0m  [["id", "207281424"]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "line_pets" ("consider_id", "created_at", "pet_id", "updated_at") VALUES (?, ?, ?, ?)[0m  [["consider_id", 980190963], ["created_at", Tue, 18 Feb 2014 04:44:25 UTC +00:00], ["pet_id", 207281424], ["updated_at", Tue, 18 Feb 2014 04:44:25 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mConsider Load (0.3ms)[0m  [1mSELECT "considers".* FROM "considers" WHERE "considers"."id" = ? ORDER BY "considers"."id" ASC LIMIT 1[0m  [["id", 980190963]]
+Redirected to http://test.host/considers/980190963
+Completed 302 Found in 73ms (ActiveRecord: 3.0ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "line_pets"
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+----------------------------------------------------
+LinePetsControllerTest: test_should_destroy_line_pet
+----------------------------------------------------
+  [1m[36mLinePet Load (0.1ms)[0m  [1mSELECT "line_pets".* FROM "line_pets" WHERE "line_pets"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "line_pets"
+Processing by LinePetsController#destroy as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mLinePet Load (0.1ms)[0m  [1mSELECT "line_pets".* FROM "line_pets" WHERE "line_pets"."id" = ? LIMIT 1[0m  [["id", "980190962"]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mDELETE FROM "line_pets" WHERE "line_pets"."id" = ?[0m  [["id", 980190962]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/line_pets
+Completed 302 Found in 3ms (ActiveRecord: 0.5ms)
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "line_pets"[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+--------------------------------------------
+LinePetsControllerTest: test_should_get_edit
+--------------------------------------------
+  [1m[35mLinePet Load (0.1ms)[0m  SELECT "line_pets".* FROM "line_pets" WHERE "line_pets"."id" = ? LIMIT 1  [["id", 980190962]]
+Processing by LinePetsController#edit as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mLinePet Load (0.1ms)[0m  [1mSELECT "line_pets".* FROM "line_pets" WHERE "line_pets"."id" = ? LIMIT 1[0m  [["id", "980190962"]]
+  Rendered line_pets/_form.html.erb (12.4ms)
+Completed 200 OK in 35ms (Views: 33.6ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+---------------------------------------------
+LinePetsControllerTest: test_should_get_index
+---------------------------------------------
+  [1m[35mLinePet Load (0.1ms)[0m  SELECT "line_pets".* FROM "line_pets" WHERE "line_pets"."id" = ? LIMIT 1  [["id", 980190962]]
+Processing by LinePetsController#index as HTML
+  [1m[36mLinePet Load (0.2ms)[0m  [1mSELECT "line_pets".* FROM "line_pets"[0m
+Completed 200 OK in 13ms (Views: 12.7ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+-------------------------------------------
+LinePetsControllerTest: test_should_get_new
+-------------------------------------------
+  [1m[35mLinePet Load (0.1ms)[0m  SELECT "line_pets".* FROM "line_pets" WHERE "line_pets"."id" = ? LIMIT 1  [["id", 980190962]]
+Processing by LinePetsController#new as HTML
+  Rendered line_pets/_form.html.erb (2.3ms)
+Completed 200 OK in 13ms (Views: 12.8ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+-------------------------------------------------
+LinePetsControllerTest: test_should_show_line_pet
+-------------------------------------------------
+  [1m[36mLinePet Load (0.1ms)[0m  [1mSELECT "line_pets".* FROM "line_pets" WHERE "line_pets"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+Processing by LinePetsController#show as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[35mLinePet Load (0.1ms)[0m  SELECT "line_pets".* FROM "line_pets" WHERE "line_pets"."id" = ? LIMIT 1  [["id", "980190962"]]
+Completed 200 OK in 13ms (Views: 11.0ms | ActiveRecord: 0.1ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+---------------------------------------------------
+LinePetsControllerTest: test_should_update_line_pet
+---------------------------------------------------
+  [1m[36mLinePet Load (0.1ms)[0m  [1mSELECT "line_pets".* FROM "line_pets" WHERE "line_pets"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+Processing by LinePetsController#update as HTML
+  Parameters: {"line_pet"=>{"consider_id"=>nil, "pet_id"=>nil}, "id"=>"980190962"}
+  [1m[35mLinePet Load (0.1ms)[0m  SELECT "line_pets".* FROM "line_pets" WHERE "line_pets"."id" = ? LIMIT 1  [["id", "980190962"]]
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/line_pets/980190962
+Completed 302 Found in 4ms (ActiveRecord: 0.2ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m

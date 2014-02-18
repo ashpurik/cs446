@@ -1,4 +1,8 @@
 Pets::Application.routes.draw do
+  resources :line_pets
+
+  resources :considers
+
   get "foster/index"
   post "foster/agreement"
   resources :pets
