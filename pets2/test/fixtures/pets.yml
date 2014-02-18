@@ -1,0 +1,22 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  breed: MyString
+  image_url: MyString
+  age: 9.99
+  habits: MyText
+
+two:
+  name: MyString
+  breed: MyString
+  image_url: MyString
+  age: 9.99
+  habits: MyText
+
+ruby:
+  name: Ruby
+  breed: Kitty
+  image_url: ruby_kitty.gif
+  age: 8.00
+  habits: Cat Stuff

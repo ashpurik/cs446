@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Pet Adoption Center</title>
+  <%= stylesheet_link_tag "scaffold" %>
+  <%= stylesheet_link_tag "pets", :media => "all" %>
+  <%= javascript_include_tag :defaults %>
+  <%= csrf_meta_tag %>
+</head>
+
+<body id="pets">
+  <div id="banner">
+    <%= "Pet Adoption Center" %>
+  </div>
+
+  <div id="columns">
+    <div id="side">
+      <%= link_to "Foster Home Page", foster_path %><br/>
+      <%= link_to "Pet Actions", pets_path %><br/>
+      <a href="http://www.google.com">Google Search</a><br/>
+      <a href="http://eecs.mines.edu">EECS Home</a>
+    </div>
+
+    <div id="main">
+      <%= yield %>
+    </div>
+  </div>
+
+</body>
+</html>

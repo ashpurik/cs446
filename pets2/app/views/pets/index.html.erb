@@ -1,0 +1,40 @@
+<div id="pet_list">
+
+<h1>Pet Listing</h1>
+<h3>You can sort by breed or age!</h3>
+
+<table class="pretty">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Name</th>
+      <th><%= sortable "breed" %></th>
+      <th><%= sortable "age" %></th>
+      <th>Habits</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @pets.each do |pet| %>
+      <tr class = "<%= cycle('list_line_odd', 'list_line_even') %>">
+	
+	<td><%= image_tag(pet.image_url, :class => 'list_image', :height => '200px', :width => '150px') %></td>
+        <td><%= pet.name %></td>
+        <td><%= pet.breed %></td>
+        <td><%= pet.age %></td>
+        <td><%= pet.habits %></td>
+	
+	<td class="list_actions">
+          <%= link_to 'Show', pet %><br/>
+          <%= link_to 'Edit', edit_pet_path(pet) %><br/>
+          <%= link_to 'Destroy', pet, method: :delete, data: { confirm: 'Are you sure?' } %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+</div>
+<br>
+
+<%= link_to 'New Pet', new_pet_path %>

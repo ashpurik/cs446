@@ -1,0 +1,18 @@
+<% if notice %>
+<p id="notice"><%= notice %></p>
+<% end %>
+
+<h1>Furries Looking for Homes</h1>
+
+<% @pets.each do |pet| %>
+  <div class="entry">
+    <%= image_tag(pet.image_url, :height => '250px') %>
+    <h3><%= pet.name %></h3>
+    <%= sanitize(pet.habits) %><br/>
+    <h4>Age: <%= pet.age %></h4>
+    <div class="breed_line">
+      <span class="breed">Breed: <%= pet.breed %></span>
+      <%= button_to "Foster #{pet.name}", foster_agreement_path(:pet_id => pet.id) %>
+    </div><br/>
+  </div>
+<% end %>
