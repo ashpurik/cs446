@@ -71,7 +71,7 @@ class PetsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def pet_params
-      params.require(:pet).permit(:name, :breed, :image_url, :age, :habits)
+      params.require(:pet).permit(:name, :breed, :image_url, :age, :habits, :status)
     end
   
     def sort_column

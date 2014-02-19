@@ -1,10 +1,13 @@
 Pets::Application.routes.draw do
+  resources :foster_parents
+
   resources :line_pets
 
   resources :considers
 
   get "foster/index"
   post "foster/agreement"
+  post "foster_parents/new"
   resources :pets
  
 

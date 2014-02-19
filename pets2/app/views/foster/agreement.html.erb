@@ -4,3 +4,6 @@
 <p>
 I agree to provide <%= @pet.name %> with a loving foster home, and to care for my pet as if it were my own child.
 </p>
+
+<%= button_to "Confirm", new_foster_parent_path(:pet_id => @pet.id) %>
+<%= button_to 'Cancel', foster_path, method: :get %>
