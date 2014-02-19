@@ -6,6 +6,7 @@ one:
   image_url: MyString
   age: 9.99
   habits: MyText
+  status: MyString
 
 two:
   name: MyString
@@ -13,6 +14,7 @@ two:
   image_url: MyString
   age: 9.99
   habits: MyText
+  status: MyString
 
 ruby:
   name: Ruby
@@ -20,3 +22,4 @@ ruby:
   image_url: ruby_kitty.gif
   age: 8.00
   habits: Cat Stuff
+  status: Available

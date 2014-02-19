@@ -8,7 +8,8 @@ class PetsControllerTest < ActionController::TestCase
       :breed => 'Black Cat',
       :age => '2.0',
       :image_url => 'black_cat.jpg',
-      :habits => 'enjoys being adorable'
+      :habits => 'enjoys being adorable',
+      :status => 'Available'
     }
   end
 

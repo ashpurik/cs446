@@ -10,12 +10,14 @@ class PetTest < ActiveSupport::TestCase
     assert pet.errors[:breed].any?
     assert pet.errors[:age].any?
     assert pet.errors[:habits].any?
+    assert pet.errors[:status].any?
   end
 
   test "pet age must be valid" do
     pet = Pet.new(:name => "Pet Name", 
 		  :breed => "A Breed",
-		  :habits => "Likes to do things")
+		  :habits => "Likes to do things",
+		  :status => "Available")
     pet.age = -2
     assert pet.invalid?
     assert_equal "must be greater than 0.0",
@@ -40,7 +42,8 @@ class PetTest < ActiveSupport::TestCase
     	    :breed => "A Breed",
 	    :habits => "Likes to do things",
 	    :age => 10.0,
-	    :image_url => image_url)
+	    :image_url => image_url,
+	    :status => "Available")
   end
 
   test "image url" do

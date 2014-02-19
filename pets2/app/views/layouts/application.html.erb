@@ -18,7 +18,7 @@
       <div id="consider">
 	<% if @consider %>
           <%= hidden_div_if(@consider.line_pets.empty?, id: 'consider') do %>
-            <%= render @consider %>
+            <%= render @consider unless @consider.line_pets == nil %>
           <% end %>
         <% end %>
       </div>

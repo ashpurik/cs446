@@ -1,0 +1,12 @@
+o: ActiveSupport::Cache::Entry:@valueI"¡      <div class="entry">
+        <img alt="German shepherd" height="250px" src="/images/german_shepherd.jpg" />
+        <h3>Sasha</h3>
+        loves chasing mice, enjoys swimming, prefers to eat food off of human plates, does not like to be left alone for long<br/>
+        <h4>Age: 0.4</h4>
+        <div class="breed_line">
+          <span class="breed">Breed: German Shepherd</span>
+          <form action="/foster/agreement?pet_id=6" class="button_to" method="post"><div><input type="submit" value="Foster Sasha" /><input name="authenticity_token" type="hidden" value="rxWbFTsYbXW8UxFN31wMKStwMGUEMgdJGIVbu3sGMfI=" /></div></form> 
+          <form action="/line_pets?pet_id=6" class="button_to" data-remote="true" method="post"><div><input type="submit" value="Considering" /><input name="authenticity_token" type="hidden" value="rxWbFTsYbXW8UxFN31wMKStwMGUEMgdJGIVbu3sGMfI=" /></div></form>
+        </div><br/>
+      </div>
+:ET:@created_atf1392784816.6060112:@expires_in0
