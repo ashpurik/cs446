@@ -41,9 +41,11 @@ class ConsidersControllerTest < ActionController::TestCase
 
   test "should destroy consider" do
     assert_difference('Consider.count', -1) do
+      session[:consider_id] = @consider.id
       delete :destroy, id: @consider
     end
 
-    assert_redirected_to considers_path
+    assert_redirected_to foster_path
   end
+
 end

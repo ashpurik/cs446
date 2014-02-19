@@ -1,6 +1,8 @@
 class FosterController < ApplicationController
+  include CurrentConsider
+  before_action :set_consider
   def index
-    @pets = Pet.all
+    @pets = Pet.order(:name)
   end
 
   def agreement

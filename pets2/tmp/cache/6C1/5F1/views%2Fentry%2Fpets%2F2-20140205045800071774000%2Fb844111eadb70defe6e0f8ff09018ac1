@@ -1,0 +1,12 @@
+o: ActiveSupport::Cache::Entry:@valueI"      <div class="entry">
+        <img alt="Orange tabby" height="250px" src="/images/orange_tabby.jpg" />
+        <h3>Moosya</h3>
+        hates the smell of vanilla, enjoys playing in the yard, is terrified of dogs, adores tuna<br/>
+        <h4>Age: 0.33</h4>
+        <div class="breed_line">
+          <span class="breed">Breed: Orange Tabby</span>
+          <form action="/foster/agreement?pet_id=2" class="button_to" method="post"><div><input type="submit" value="Foster Moosya" /><input name="authenticity_token" type="hidden" value="rxWbFTsYbXW8UxFN31wMKStwMGUEMgdJGIVbu3sGMfI=" /></div></form> 
+          <form action="/line_pets?pet_id=2" class="button_to" data-remote="true" method="post"><div><input type="submit" value="Considering" /><input name="authenticity_token" type="hidden" value="rxWbFTsYbXW8UxFN31wMKStwMGUEMgdJGIVbu3sGMfI=" /></div></form>
+        </div><br/>
+      </div>
+:ET:@created_atf1392777910.934019:@expires_in0

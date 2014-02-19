@@ -31,7 +31,8 @@ class LinePetsController < ApplicationController
 
     respond_to do |format|
       if @line_pet.save
-        format.html { redirect_to @line_pet.consider, notice: 'Line pet was successfully created.' }
+        format.html { redirect_to foster_url }
+	format.js
         format.json { render action: 'show', status: :created, location: @line_pet }
       else
         format.html { render action: 'new' }
@@ -72,6 +73,6 @@ class LinePetsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def line_pet_params
-      params.require(:line_pet).permit(:pet_id, :consider_id)
+      params.require(:line_pet).permit(:pet_id)
     end
 end

@@ -21,7 +21,7 @@ class LinePetsControllerTest < ActionController::TestCase
       post :create, pet_id: pets(:ruby).id
     end
 
-    assert_redirected_to consider_path(assigns(:line_pet).consider)
+    assert_redirected_to foster_path
   end
 
   test "should show line_pet" do
@@ -35,7 +35,7 @@ class LinePetsControllerTest < ActionController::TestCase
   end
 
   test "should update line_pet" do
-    patch :update, id: @line_pet, line_pet: { consider_id: @line_pet.consider_id, pet_id: @line_pet.pet_id }
+    patch :update, id: @line_pet, line_pet: { pet_id: @line_pet.pet_id }
     assert_redirected_to line_pet_path(assigns(:line_pet))
   end
 
@@ -46,4 +46,16 @@ class LinePetsControllerTest < ActionController::TestCase
 
     assert_redirected_to line_pets_path
   end
+
+  test "should create line_pet via ajax" do
+    assert_difference('LinePet.count') do
+      xhr :post, :create, pet_id: pets(:ruby).id
+    end 
+
+    assert_response :success
+#    assert_select_jquery :html, '#consider' do
+#      assert_select 'tr#current_item td', /Programming Ruby 1.9/
+#    end
+  end
+
 end

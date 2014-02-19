@@ -10,6 +10,10 @@ class Pet < ActiveRecord::Base
     :message => 'must be a .gif, .jpg, or .png format.'
   }
 
+  def self.latest
+    Pet.order(:updated_at).last
+  end
+
   private
 
     # ensure that there are no line items referencing this product

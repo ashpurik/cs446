@@ -1,5 +1,6 @@
 class ConsidersController < ApplicationController
   before_action :set_consider, only: [:show, :edit, :update, :destroy]
+  rescue_from ActiveRecord::RecordNotFound, with: :invalid_consider
 
   # GET /considers
   # GET /considers.json
@@ -54,9 +55,10 @@ class ConsidersController < ApplicationController
   # DELETE /considers/1
   # DELETE /considers/1.json
   def destroy
-    @consider.destroy
+    @consider.destroy if @consider.id == session[:consider_id]
+    session[:consider_id] = nil
     respond_to do |format|
-      format.html { redirect_to considers_url }
+      format.html { redirect_to foster_url }
       format.json { head :no_content }
     end
   end
@@ -70,5 +72,9 @@ class ConsidersController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def consider_params
       params[:consider]
+    end
+    def invalid_consider
+      logger.error "Attempt to access invalid consider #{params[:id]}"
+      redirect_to foster_url, notice: 'Invalid consider'
     end
 end

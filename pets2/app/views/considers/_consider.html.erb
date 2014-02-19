@@ -1,0 +1,10 @@
+<% unless consider.line_pets.empty? %>
+<h2>Pets You Are Considering</h2>
+<table>
+  <%= render(consider.line_pets) %>
+</table>
+
+<%= button_to 'Clear Considerations', consider, method: :delete,
+    data: { confirm: 'Are you sure?' } %>
+
+<% end %>

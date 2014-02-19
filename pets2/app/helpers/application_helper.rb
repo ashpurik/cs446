@@ -7,4 +7,11 @@ def sortable(column, title = nil)
   link_to title, {:sort => column, :direction => direction}, {:class => css_class}
 end
 
+  def hidden_div_if(condition, attributes = {}, &block)
+    if condition
+      attributes["style"] = "display: none"
+    end
+    content_tag("div", attributes, &block)
+  end
+
 end
