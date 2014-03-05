@@ -56,11 +56,26 @@ class SimpleApp
     end
 
   def render_form(request, response)
+    File.open("form.html", "r") { |form| response.write(form.read) }
+  end
 
+  def apply_sort(sort) 
+    case sort
+      when "Title"
+        @books.sort! { |x,y| x[0] <=> y[0] }
+      when "Author"
+        @books.sort! { |x,y| x[1] <=> y[1] }
+      when "Language"
+        @books.sort! { |x,y| x[2] <=> y[2] }
+      when "Year"
+        @books.sort! { |x,y| x[3] <=> y[3] }
+    end
   end
 
   def render_list(request, response)
-    response.write("<h2>Sorted by SORT ORDER</h2><br>")
+    sort = request.GET["sort_type"] 
+    apply_sort(sort)
+    response.write("<h2>Sorted by #{sort}</h2><br>")
     response.write("<table>")
     response.write("<tr>")
     response.write("<th>Rank</th>")
