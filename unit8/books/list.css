@@ -1,3 +1,17 @@
 h1 {
   color: blue;
 }
+
+h2 {
+	font-family: "Times New Roman";
+}
+
+table,th,td {
+	border-collapse: collapse;
+	border: 1px solid black;
+	padding: 5px;
+}
+
+p {
+	font-style: italic;
+}

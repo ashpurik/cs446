@@ -1,12 +1,25 @@
 #!/usr/bin/ruby
 
 require 'rack'
+require 'csv'
 
 class SimpleApp
 	def initialize()
     # can set up variables that will be needed later
 		@time = Time.now
+    @books = get_books
 	end
+
+  def get_books
+    books = []
+    i=0
+    CSV.foreach("books.csv") do |row|
+      row << i
+      books << row
+      i += 1
+    end
+    return books
+  end
 
 	def call(env)
     # create request and response objects
@@ -20,6 +33,12 @@ class SimpleApp
         # remove leading /
         file = env["PATH_INFO"][1..-1]
         return [200, {"Content-Type" => "text/css"}, [File.open(file, "rb").read]]
+      when /\/form.*/
+        # serve up book sorting form
+        render_form(request, response)
+      when /\/list.*/
+        # serve up list of books response
+        render_list(request, response)
       when /\/crazy.*/
         # serve up the form
         render_crazy(request, response)
@@ -30,8 +49,39 @@ class SimpleApp
         [404, {"Content-Type" => "text/plain"}, ["Error 404!"]]
       end	# end case
 
+      # include the footer
+      File.open("footer.html", "r") { |foot| response.write(foot.read) }
+
       response.finish
     end
+
+  def render_form(request, response)
+
+  end
+
+  def render_list(request, response)
+    response.write("<h2>Sorted by SORT ORDER</h2><br>")
+    response.write("<table>")
+    response.write("<tr>")
+    response.write("<th>Rank</th>")
+    response.write("<th>Title</th>")
+    response.write("<th>Author</th>")
+    response.write("<th>Language</th>")
+    response.write("<th>Year</th>")
+    response.write("<th>Copies</th>")
+    response.write("</tr>")
+    @books.each do |book|
+      response.write("<tr>")
+      response.write("<td>#{book[5]}</td>")
+      response.write("<td>#{book[0]}</td>")
+      response.write("<td>#{book[1]}</td>")
+      response.write("<td>#{book[2]}</td>")
+      response.write("<td>#{book[3]}</td>")
+      response.write("<td>#{book[4]}</td>")
+      response.write("</tr>")
+    end
+    response.write("</table>")
+  end
 
   # try http://localhost:8080/crazy
 	def render_crazy(req, response)
