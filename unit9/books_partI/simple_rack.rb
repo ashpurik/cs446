@@ -2,23 +2,16 @@
 
 require 'rack'
 require 'csv'
+require 'rack'
+require 'erb'
+require 'sqlite3'
 
 class SimpleApp
-	def initialize()
+  def initialize()
     # can set up variables that will be needed later
 		@time = Time.now
-    @books = get_books
-	end
-
-  def get_books
-    books = []
-    i=0
-    CSV.foreach("books.csv") do |row|
-      row << i
-      books << row
-      i += 1
-    end
-    return books
+    @db = SQLite3::Database.new("books.sqlite3.db")
+    @books = @db.execute("SELECT * FROM books")
   end
 
 	def call(env)
@@ -56,46 +49,28 @@ class SimpleApp
     end
 
   def render_form(request, response)
-    File.open("form.html", "r") { |form| response.write(form.read) }
+    response.write(ERB.new(File.read("form.html.erb")).result(binding))
   end
 
   def apply_sort(sort) 
     case sort
       when "Title"
-        @books.sort! { |x,y| x[0] <=> y[0] }
+        @books = @db.execute("SELECT * FROM books ORDER BY title")
       when "Author"
-        @books.sort! { |x,y| x[1] <=> y[1] }
+        @books = @db.execute("SELECT * FROM books ORDER BY author")
       when "Language"
-        @books.sort! { |x,y| x[2] <=> y[2] }
+        @books = @db.execute("SELECT * FROM books ORDER BY language")
       when "Year"
-        @books.sort! { |x,y| x[3] <=> y[3] }
+        @books = @db.execute("SELECT * FROM books ORDER BY published")
+      when "Rank"
+        @books = @db.execute("SELECT * FROM books ORDER BY id")
     end
   end
 
   def render_list(request, response)
     sort = request.GET["sort_type"] 
     apply_sort(sort)
-    response.write("<h2>Sorted by #{sort}</h2><br>")
-    response.write("<table>")
-    response.write("<tr>")
-    response.write("<th>Rank</th>")
-    response.write("<th>Title</th>")
-    response.write("<th>Author</th>")
-    response.write("<th>Language</th>")
-    response.write("<th>Year</th>")
-    response.write("<th>Copies</th>")
-    response.write("</tr>")
-    @books.each do |book|
-      response.write("<tr>")
-      response.write("<td>#{book[5]}</td>")
-      response.write("<td>#{book[0]}</td>")
-      response.write("<td>#{book[1]}</td>")
-      response.write("<td>#{book[2]}</td>")
-      response.write("<td>#{book[3]}</td>")
-      response.write("<td>#{book[4]}</td>")
-      response.write("</tr>")
-    end
-    response.write("</table>")
+    response.write(ERB.new(File.read("list.html.erb")).result(binding))
   end
 
   # try http://localhost:8080/crazy
